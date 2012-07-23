@@ -120,6 +120,11 @@
 
 		
 		$("#show-form").live('click',function(){
+			$("#Dashboard_title").val('');
+			$("#Dashboard_content").val('');
+			$("#Dashboard_ajaxrequest").val('');
+			$("#Dashboard_newrecord").val('');
+			$("#maintitle").html('Create Portlet');
 			$("#formModalBody").removeClass('moveOut');
 		});
 	/* js functions  */

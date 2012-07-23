@@ -4,7 +4,7 @@
  
 		<div class="modal-header">
 			<a class="close" data-dismiss="modal">&times;</a>
-			<h3>Create portlet</h3>
+			<h3 id="maintitle"><?=($model->isNewRecord) ? 'Create Portlet' : 'Update Portlet';?></h3>
 		</div>
 
 		<div class="modal-body moveOut" id="formModalBody" style="width:90%;" >

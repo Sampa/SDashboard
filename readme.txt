@@ -1,4 +1,5 @@
 THIS MODULE REQUIERES yii- BOOTSTRAP
+And hide the index.php for url's.
 
 
 Each portlet can be minimized, maximized, resized and moved,hidden or deleted.
