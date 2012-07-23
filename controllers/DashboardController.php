@@ -82,7 +82,6 @@ class DashboardController extends Controller
 				
 				if($model->save()){
 					echo CJSON::encode(array('status'=>'success'));
-					Yii::app()->end();
 				}else{
 				 echo CJSON::encode(array('status'=>'error'));
 				}

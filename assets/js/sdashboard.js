@@ -52,25 +52,9 @@
 		/* Submitting the  create form*/
 		$("#dashboard-form").live('submit',function(event){
 		event.preventDefault();
-
-
-			$.ajax({
-			  type: "POST",
-			  url: "/sdashboard/dashboard/create",
-			  data: $(this).serialize(),
-			  cache:false,
-  			  dataType: 'json',
-			}).done(function( data ) {
-			if(data.status == 'success'){
-				$('#formModal').modal('hide')
-				$(".modal-backdrop").hide();
-				reloadPortlets();
-				$().toastmessage('showSuccessToast', "Successfull!");
-			return
-			}else{
-				$().toastmessage('showErrorToast', "Validation failed!");
-				}
-			});
+		addPortlet($(this).serialize());
+		$("#dashboard-form").empty();
+		return false;			
 	});
 
 		$("#submitform").live('click',function(){
@@ -173,4 +157,25 @@
 		}
 		function reloadPortlets(){
 			$.ajax({'url':'/sdashboard/dashboard/index','cache':false,'success':function(html){jQuery("#dashboard-index").html(html)}});		
+		}
+		function addPortlet(data){
+
+			$.ajax({
+			  type: "POST",
+			  url: "/sdashboard/dashboard/create",
+			  data: data,
+			  cache:false,
+  			  dataType: 'json',
+			}).done(function( data ) {
+			if(data.status == 'success'){
+				$('#formModal').modal('hide')
+				$(".modal-backdrop").hide();
+				reloadPortlets();
+				$().toastmessage('showSuccessToast', "Successfull!");
+			return false;
+			}else{
+				$().toastmessage('showErrorToast', "Validation failed!");
+				}
+			});
+			return false;
 		}
