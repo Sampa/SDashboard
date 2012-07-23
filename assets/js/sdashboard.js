@@ -52,6 +52,8 @@
 		/* Submitting the  create form*/
 		$("#dashboard-form").live('submit',function(event){
 		event.preventDefault();
+
+
 			$.ajax({
 			  type: "POST",
 			  url: "/sdashboard/dashboard/create",
@@ -64,6 +66,7 @@
 				$(".modal-backdrop").hide();
 				reloadPortlets();
 				$().toastmessage('showSuccessToast', "Successfull!");
+			return
 			}else{
 				$().toastmessage('showErrorToast', "Validation failed!");
 				}
@@ -123,7 +126,7 @@
 			$("#Dashboard_title").val('');
 			$("#Dashboard_content").val('');
 			$("#Dashboard_ajaxrequest").val('');
-			$("#Dashboard_newrecord").val('');
+			$("#Dashboard_newrecord").val('create');
 			$("#maintitle").html('Create Portlet');
 			$("#formModalBody").removeClass('moveOut');
 		});

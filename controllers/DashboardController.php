@@ -65,7 +65,6 @@ class DashboardController extends Controller
 	 */
 	public function actionCreate()
 	{
-		
 		if(isset($_POST['Dashboard']))
 		{
 			if($_POST['Dashboard']['newrecord'] == 'create'){
@@ -83,6 +82,7 @@ class DashboardController extends Controller
 				
 				if($model->save()){
 					echo CJSON::encode(array('status'=>'success'));
+					Yii::app()->end();
 				}else{
 				 echo CJSON::encode(array('status'=>'error'));
 				}
