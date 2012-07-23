@@ -1,6 +1,5 @@
-THIS MODULE REQUIERES BOOTSTRAP
-I have tried to make it work aslong as you have bootstrap on your site, but _maybe_ it needs the yii-bootstrap extension.
-(I have tried not to use the yii-bootstrap extension widgets at all but there might be some code that uses it,notify me if you run into problems)
+THIS MODULE REQUIERES yii- BOOTSTRAP
+
 
 Each portlet can be minimized, maximized, resized and moved,hidden or deleted.
 Everything is saved in real time automaticly thrue ajax and is connected to the logged in user.
